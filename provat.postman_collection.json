@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "7eac09b6-3746-40ba-9a1a-9426a4ac999d",
+		"name": "provat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30696596"
+	},
+	"item": [
+		{
+			"name": "pet",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pet_name\": \"Buddy\",\n  \"owner_id\": \"64a7f2d0f8f1b3e43b123456\",\n  \"species\": \"Dog\",\n  \"breed\": \"Golden Retriever\",\n  \"age\": 4,\n  \"sex\": \"Male\",\n  \"Vaccination_Status\": true,\n  \"last_Vaccination_date\": \"2023-09-15T00:00:00.000Z\",\n  \"health_status\": \"Healthy\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{provat}}/pet/create-pet",
+							"host": [
+								"{{provat}}"
+							],
+							"path": [
+								"pet",
+								"create-pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pet-update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pet_name\": \"Buddy updated 1\",\n  \"owner_id\": \"64a7f2d0f8f1b3e43b123456\",\n  \"species\": \"Dog\",\n  \"breed\": \"Golden Retriever\",\n  \"age\": 4,\n  \"sex\": \"Male\",\n  \"Vaccination_Status\": true,\n  \"last_Vaccination_date\": \"2023-09-15T00:00:00.000Z\",\n  \"health_status\": \"Healthy\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{provat}}/pet/update-pet?id=6758533c89746d51bad0260d",
+							"host": [
+								"{{provat}}"
+							],
+							"path": [
+								"pet",
+								"update-pet"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6758533c89746d51bad0260d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service",
+			"item": [
+				{
+					"name": "service-create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"service_name\": \"Vaccination\",\n    \"service_description\": \"Routine vaccination to protect pets against diseases.\",\n    \"cost\": 50\n  },\n  {\n    \"service_name\": \"Spay/Neuter\",\n    \"service_description\": \"Surgical sterilization procedure for pets.\",\n    \"cost\": 120\n  },\n  {\n    \"service_name\": \"Microchipping\",\n    \"service_description\": \"Implanting a microchip to help locate lost pets.\",\n    \"cost\": 40\n  },\n  {\n    \"service_name\": \"Dental Cleaning\",\n    \"service_description\": \"Professional cleaning of pets' teeth to prevent dental issues.\",\n    \"cost\": 80\n  },\n  {\n    \"service_name\": \"Grooming\",\n    \"service_description\": \"Bathing, hair trimming, and nail clipping for pets.\",\n    \"cost\": 30\n  },\n  {\n    \"service_name\": \"Deworming\",\n    \"service_description\": \"Treatment to remove internal parasites from pets.\",\n    \"cost\": 25\n  },\n  {\n    \"service_name\": \"Behavioral Training\",\n    \"service_description\": \"Training sessions to correct behavioral issues.\",\n    \"cost\": 100\n  },\n  {\n    \"service_name\": \"Health Check-up\",\n    \"service_description\": \"Comprehensive medical examination for pets.\",\n    \"cost\": 70\n  },\n  {\n    \"service_name\": \"Emergency Care\",\n    \"service_description\": \"Immediate medical attention for urgent pet health issues.\",\n    \"cost\": 200\n  },\n  {\n    \"service_name\": \"Pet Boarding\",\n    \"service_description\": \"Overnight boarding and care for pets.\",\n    \"cost\": 50\n  }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{provat}}/service/create-service",
+							"host": [
+								"{{provat}}"
+							],
+							"path": [
+								"service",
+								"create-service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vet_service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vet_id\":\"67586cb5d75c758a69907622\",\n    \"service_id\": \"67586cb5d75c758a6990766e\",\n    \"price\": 200,\n    \"days\": [\n        \"Monday\",\n        \"Tuesday\"\n    ],\n    \"time\": \"9 AM - 5 PM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{provat}}/verService/create-vet-service",
+							"host": [
+								"{{provat}}"
+							],
+							"path": [
+								"verService",
+								"create-vet-service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vet-rating",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vet_id\": \"67586cb5d75c758a69907622\",\n    \"service_id\": \"67586cb5d75c758a6990766e\",\n    \"service_rating\": 4.5,\n    \"description\": \"Excellent service! The staff were very caring and professional.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{provat}}/serviceRating/create-service-rating",
+							"host": [
+								"{{provat}}"
+							],
+							"path": [
+								"serviceRating",
+								"create-service-rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{provat}}/service",
+							"host": [
+								"{{provat}}"
+							],
+							"path": [
+								"service"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
